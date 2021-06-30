@@ -101,6 +101,7 @@ The `Todo / Ideas` list below might be a good starting point.
 
 - [ ] Arrive at a good name (for the project and the main script)
 - [ ] Exit if `SM2DIR` isn't set
+- [ ] Create/Set up `settings.json` if not present or empty
 - [ ] Check if file is `cat`-able before adding to settings
 - [ ] Rename lots of things (like `files: []` in the settings file)
 - [ ] Generally improve user-input control flow
