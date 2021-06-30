@@ -32,6 +32,7 @@ setup () {
   clear -x
   # Loop through all cards in /cards directory, add any that we haven't seen yet
   # to the settings.
+  shopt -s nullglob
   for f in $SM2DIR/cards/*
   do
     filename=$(basename $f)
@@ -189,7 +190,9 @@ ask_card () { # $1 FILE, $2 RE_REVIEW
   while true; do # y/n loop
     # Check if card has a divider - if so it's a flash card
     if grep -qE '([-]){3,}' $SM2DIR/cards/$FILE; then
+      printf "\n###########\n"
       printf "\n### This is a flash card:\n"
+      printf "\n"
       printf "\n"
 
       # show only the top half first:
@@ -197,7 +200,7 @@ ask_card () { # $1 FILE, $2 RE_REVIEW
 
       printf "\n"
       printf "\n###########\n"
-      printf "### Press any key to reveal the other side.\n"
+      printf "### Press any key to reveal the whole card.\n"
 
       read -n 1 advance
 
@@ -364,7 +367,7 @@ exit_if_no_cards () {
   TOTAL_CARDS=`cat $CFG | jq '.files | length'`
 
   if [[ "$TOTAL_CARDS" -lt 1 ]]; then
-    echo "We have no cards. Add or symlink to /cards" >&2
+    printf "\n\nWe have no cards. Add or symlink to /cards\n"
     exit 1
   fi
 }
