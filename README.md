@@ -103,6 +103,9 @@ The `Todo / Ideas` list below might be a good starting point.
 - [ ] Exit if `SM2DIR` isn't set
 - [ ] Create/Set up `settings.json` if not present or empty
 - [ ] Check if file is `cat`-able before adding to settings
+- [ ] Allow _any_ filepath to be included (not just `/cards` items)?
+- [ ] Allow `/cards` directory to be any directory (bash profile config) or a
+    set of directories
 - [ ] Rename lots of things (like `files: []` in the settings file)
 - [ ] Generally improve user-input control flow
 - [ ] Find a better approach for presenting the card internals (borders around
