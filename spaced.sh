@@ -29,6 +29,12 @@ then
 fi
 
 setup () {
+  ## TODO: set up settings.json file if it's empty. CREATE IT if it's not present.
+  # {
+  #   "files": [],
+  #   "last_run": "1921-06-30T00:00:00Z"
+  # }
+
   clear -x
   # Loop through all cards in /cards directory, add any that we haven't seen yet
   # to the settings.
